@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saliency Demo</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Saliency Demo</h1>
+    <p class="subtitle">Static &middot; Motion &middot; Objectness &mdash; powered by OpenCV</p>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="static">Static Saliency</button>
+    <button class="tab" data-tab="motion">Motion Saliency</button>
+    <button class="tab" data-tab="objectness">Objectness Saliency</button>
+  </nav>
+
+  <main>
+    <section id="tab-static" class="panel active">
+      <div class="controls">
+        <label for="static-image-select">Image:</label>
+        <select id="static-image-select"></select>
+        <span class="or">or upload</span>
+        <input type="file" id="static-file" accept="image/*" />
+        <button id="static-run">Run Static Saliency</button>
+        <span id="static-status" class="status"></span>
+      </div>
+      <div class="grid">
+        <figure><img id="static-original" alt="Original" /><figcaption>Original</figcaption></figure>
+        <figure><img id="static-spectral" alt="Spectral" /><figcaption>Spectral Residual</figcaption></figure>
+        <figure><img id="static-fine" alt="Fine" /><figcaption>Fine Grained</figcaption></figure>
+        <figure><img id="static-threshold" alt="Threshold" /><figcaption>Otsu Threshold</figcaption></figure>
+        <figure><img id="static-roi" alt="ROI" /><figcaption id="static-roi-caption">ROIs</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="tab-motion" class="panel">
+      <div class="controls">
+        <button id="motion-synthetic">Synthetic (moving objects)</button>
+        <span class="or">or</span>
+        <input type="file" id="motion-file" accept="video/*" />
+        <button id="motion-upload">Upload Video</button>
+        <span class="or">or</span>
+        <button id="motion-webcam">Webcam</button>
+        <button id="motion-stop" class="danger">Stop</button>
+        <span id="motion-status" class="status"></span>
+      </div>
+      <div class="motion-display">
+        <div id="motion-stream-box">
+          <img id="motion-stream" alt="Motion saliency stream" />
+        </div>
+        <div id="motion-webcam-box" hidden>
+          <video id="motion-webcam-video" autoplay playsinline muted></video>
+          <img id="motion-webcam-map" alt="Saliency map" />
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-objectness" class="panel">
+      <div class="controls">
+        <label for="objectness-image-select">Image:</label>
+        <select id="objectness-image-select"></select>
+        <span class="or">or upload</span>
+        <input type="file" id="objectness-file" accept="image/*" />
+        <label for="objectness-max">Proposals:</label>
+        <input type="range" id="objectness-max" min="1" max="30" value="10" />
+        <span id="objectness-max-label">10</span>
+        <button id="objectness-run">Run Objectness Saliency</button>
+        <span id="objectness-status" class="status"></span>
+      </div>
+      <div class="objectness-layout">
+        <figure class="obj-main"><img id="objectness-img" alt="Objectness proposals" /><figcaption id="objectness-caption">Proposals</figcaption></figure>
+        <ul id="objectness-list" class="proposal-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

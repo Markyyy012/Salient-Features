@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS junk
+.DS_Store
+Thumbs.db
+*.Zone.Identifier
+
+# IDE / editors
+.idea/
+.vscode/
+*.swp
+
+# Runtime / temp
+uploads/
+*.log
