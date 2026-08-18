@@ -10,6 +10,12 @@ Interactive visualization of three saliency algorithms from OpenCV (`opencv-cont
 | **Motion** | Spatiotemporal motion saliency over a frame sequence | `MotionSaliencyBinWangApr2014` |
 | **Objectness** | BING objectness proposals (bounding boxes ranked by object likelihood) | `ObjectnessBING` |
 
+## Demo
+
+| Static | Motion | Objectness |
+| --- | --- | --- |
+| ![static saliency](static.gif) | ![motion saliency](motion.gif) | ![objectness saliency](objectness.gif) |
+
 ## Requirements
 
 - Python 3.8+
