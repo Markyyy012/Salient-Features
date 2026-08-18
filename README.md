@@ -12,9 +12,17 @@ Interactive visualization of three saliency algorithms from OpenCV (`opencv-cont
 
 ## Demo
 
-| Static | Motion | Objectness |
-| --- | --- | --- |
-| ![static saliency](static.gif) | ![motion saliency](motion.gif) | ![objectness saliency](objectness.gif) |
+**Static**
+
+![static saliency](static.gif)
+
+**Motion**
+
+![motion saliency](motion.gif)
+
+**Objectness**
+
+![objectness saliency](objectness.gif)
 
 ## Requirements
 
